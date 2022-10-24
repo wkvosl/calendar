@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- '#' = PreparedStatement -->
+<!-- '$' = Statement -->
+
+<!--  <![CDATA[ ]]> -->
+
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+	
+	<mapper namespace="com.practice.data.dto.Cal_dto_mapper">
+	
+		<insert id="insertMemo" parameterType="String">
+			insert into cal values(NULL+#{param1}, #{param1}, #{param2}, #{param3})
+		</insert>
+	
+		<select id="listMemo" resultType="com.practice.data.dto.Cal_dto">
+			select * from cal where memo_date = #{param1}
+		</select>
+		
+		<update id="updateMemo" >
+			update cal set memo_date = #{param1}, memo_title = #{param2}, memo_write = #{param3} where memo_id = #{param4}
+		</update>
+		
+		<delete id="deleteMemo">
+			delete from cal where memo_id = #{param1}
+		</delete>
+	</mapper>
+	
+	

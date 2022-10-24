@@ -9,6 +9,8 @@
 <body>
 
 hello
+<br>
+<a href="/cal/cal">달력보기</a>
 
 </body>
 </html>
