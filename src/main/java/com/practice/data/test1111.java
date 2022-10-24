@@ -14,8 +14,14 @@ public class test1111 {
 		int firstDay = cal1.get(Calendar.DAY_OF_WEEK);
 		int lastDay = cal1.getActualMaximum(Calendar.DATE);
 		
-		System.out.println(firstDay+"\n");
-		System.out.println(lastDay+"\n");
+			int year = cal1.get(Calendar.YEAR);
+			int month = cal1.get(Calendar.MONTH);
+			System.out.println(year);
+			System.out.println(month+1);
+			
+			
+//		System.out.println(firstDay+"\n");
+//		System.out.println(lastDay+"\n");
 		
 		for (int i = 1; i < firstDay; i++) {
 			System.out.print("\t");

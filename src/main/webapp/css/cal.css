@@ -5,13 +5,48 @@ table{
     height: 30vw;
     border: none;
 }
-
 td {
 	text-align: center;
 	padding-right: 3px;
 	border: none;
 }
-
 th {
 	border: none;
+}
+table a{
+	text-decoration: none;
+	color:black;
+}
+table a:visited{
+	text-decoration: none;
+	color:black;
+}
+table a:hover{
+	color:red;
+}
+
+
+
+#floatDiv_calmemo {
+	position: absolute;
+    top: 153px;
+    left: calc(50vw + 5vw);
+    width: max-content;
+    float: right;
+    text-align: end;
+}
+#floatDiv_calmemo  input {
+	width: 200px;
+	margin-bottom: 5px;
+}
+#floatDiv_calmemo  textarea {
+	width: 202px;
+	height: 100px;
+	resize: none;
+}
+#floatDiv_calmemo  h4 {
+	margin-bottom: 5px;
+}
+#floatDiv_calmemo  button {
+	right:10px;
 }

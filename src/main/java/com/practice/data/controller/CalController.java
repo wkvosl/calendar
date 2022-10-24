@@ -1,13 +1,8 @@
 package com.practice.data.controller;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -18,18 +13,12 @@ public class CalController {
 
 	@Autowired
 	Cal cal;
-	
-	@RequestMapping("/cal")
-		public String cal() {
-			return "/cal";
-	}
-	
-	@PostMapping("/cal")
-	public String cal(@RequestParam int year, 
-					  @RequestParam int month,
+
+	@RequestMapping("/cal" )
+	public String cal(@RequestParam(value = "year" , defaultValue = "0") int year,
+					  @RequestParam(value = "month" , defaultValue = "0") int month,
 					  Model model
 					  ) throws Exception {
-		
 		
 		int startDayofWeek = cal.getStartDayofWeek(year, month);
 		model.addAttribute("startDayofWeek", startDayofWeek);
@@ -40,12 +29,7 @@ public class CalController {
 		return "/cal";
 	}
 	
-//	@GetMapping("/cal")
-//	public String cal(@RequestParam int day) {
-//		return "cal";
-//	}
-	
-	
+
 	
 	
 }
