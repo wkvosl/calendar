@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 table{
-	width: 50vw;
+	width: 35vw;
     height: 30vw;
     border: none;
 }
@@ -30,18 +30,18 @@ table a:hover{
 #floatDiv_calmemo {
 	position: absolute;
     top: 153px;
-/*     left: calc(50vw + 5vw); */
+    left: calc(32vw + 5vw);
     width: max-content;
     float: right;
     text-align: end;
 }
 #floatDiv_calmemo  input {
-    width: 60vmin;
+	width: 40vmin;
     height: 2.5vmin;
     margin-bottom: 5px;
 }
 #floatDiv_calmemo  textarea {
-    width: 60vmin;
+    width: 40vmin;
     height: 30vmin;
     resize: none;
 }
@@ -51,5 +51,11 @@ table a:hover{
 #floatDiv_calmemo  button {
 	right: 10px;
     height: 4vh;
-    width: 10vw;
+    width: 7vw;
+}
+
+
+
+#memo_inCalendar{
+	
 }

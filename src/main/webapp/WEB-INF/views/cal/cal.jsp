@@ -3,6 +3,7 @@
     import="java.util.Calendar"%>
     
    <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,7 @@
 	<c:set var="month" value="${param.month }" scope="session"/>
 	<c:set var="day" value="${param.day }" scope="session"/>
 	
-	<a href="home">홈으로</a> <h2>달력</h2>
+	<a href="../home">홈으로</a> <h2>달력</h2>
 	
 	<form action="/cal/cal" method="post">
 		<input type="number" name="year" value="${not empty year?year:'' }" maxlength="4" required="required" placeholder="년도 4자리 입력">
@@ -31,7 +32,6 @@
 	
 	
 	<c:if test="${empty year}">
-		<h5>날짜를 입력해 주세요.</h5>
 		<%
 			Calendar emptyDate = Calendar.getInstance();
 			int whenEmptyYear = emptyDate.get(Calendar.YEAR);
@@ -80,7 +80,7 @@
 	
 	
 	<c:if test="${not empty year}" >
-		<h3>${year}년 ${month}월</h3>
+		<h3>${year}년 ${month}월 ${day }일</h3>
 		
 		<c:if test="${(lastDay > 28) && (month == 2)}">
 			<h5>윤년입니다.</h5>
@@ -112,23 +112,6 @@
 			</tr>
 		</table>
 	</c:if>
-
-<div id="floatDiv_calmemo">
-	<c:if test="${not empty day }">
-			<h4>${year }년 ${month }월 ${day }일 메모</h4>
-		<form method="post" action="/cal/cal_memo">
-			
-				<input name="memo_title"><br>
-				<textarea name="memo_write" inputmode="text"></textarea><br>
-			
-			<button type="submit" >저장</button>&nbsp;
-			<button type="submit">삭제</button>
-			<input type="hidden" name="memo_date" value="${year }${month}${day}">
-		</form>
-	</c:if>
-</div>
-
-
 
 </body>
 </html>
